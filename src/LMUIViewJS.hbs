@@ -1,0 +1,17 @@
+<templateSet group="lmui">
+  {{#each this}}
+  <template
+      name="{{name}}"
+      value={{{tpl}}}
+      description="{{{description}}}"
+      toReformat="false"
+      toShortenFQNames="true">{{#if variables}}{{#each variables}}
+    <variable name="{{{name}}}" expression="{{{expression}}}" defaultValue="{{{defaultValue}}}" alwaysStopAt="true" />{{/each}}{{/if}}
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  {{/each}}
+</templateSet>

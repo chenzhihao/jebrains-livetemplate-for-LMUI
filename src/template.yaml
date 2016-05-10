@@ -1,0 +1,70 @@
+# Create es6 view
+es6:
+  description: Create a es6 view js file
+  tpl: |
+    import LM from 'lmcore2';
+    import $ from 'jquery'; //eslint-disable-line
+    import _ from 'lodash'; //eslint-disable-line
+    import utils from 'lmutils2';
+    import templates from '/* your template*//templates';
+
+    export default $class$.extend({
+        className: '/* class names */',
+
+        template: templates['/* your template here */'],
+
+        events: {},
+
+        appEvents: {},
+
+        broadcastEvents: {},
+
+        initialize (options){
+            //
+            this._super(options);
+        },
+
+        render() {
+            this.$el.html(this.template(/*your data*/));
+            this._super();
+        }
+    });
+
+  variables:
+    - {name: 'class', expression: 'complete()'}
+
+# Create es5 view
+es5:
+  description: Create a es5 view js file
+  tpl: |
+    define([
+        'lmcore2',
+        'lodash',
+        '/* your template*//templates',
+        'jquery',
+        'lmutils2'
+    ], function (LM, _, templates, $, utils) {
+        return $class$.extend({
+            className: '/* class names */',
+
+            template: templates['/* your template here */'],
+
+            events: {},
+
+            appEvents: {},
+
+            broadcastEvents: {},
+
+            initialize: function (options) {
+                this._super(options);
+            },
+
+            render: function () {
+                this.$el.html(this.template(/*your data*/));
+                this._super();
+            }
+        });
+    });
+
+  variables:
+    - {name: 'class', expression: 'complete()'}

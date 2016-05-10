@@ -1,0 +1,28 @@
+<templateSet group="lmui">
+  <template
+      name="es6"
+      value="import LM from 'lmcore2';&#10;import $ from 'jquery'; //eslint-disable-line&#10;import _ from 'lodash'; //eslint-disable-line&#10;import utils from 'lmutils2';&#10;import templates from '/* your template*//templates';&#10;&#10;export default $class$.extend({&#10;    className: '/* class names */',&#10;&#10;    template: templates['/* your template here */'],&#10;&#10;    events: {},&#10;&#10;    appEvents: {},&#10;&#10;    broadcastEvents: {},&#10;&#10;    initialize (options){&#10;        //&#10;        this._super(options);&#10;    },&#10;&#10;    render() {&#10;        this.$el.html(this.template(/*your data*/));&#10;        this._super();&#10;    }&#10;});&#10;"
+      description="Create a es6 view js file"
+      toReformat="false"
+      toShortenFQNames="true">
+    <variable name="class" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template
+      name="es5"
+      value="define([&#10;    'lmcore2',&#10;    'lodash',&#10;    '/* your template*//templates',&#10;    'jquery',&#10;    'lmutils2'&#10;], function (LM, _, templates, $, utils) {&#10;    return $class$.extend({&#10;        className: '/* class names */',&#10;&#10;        template: templates['/* your template here */'],&#10;&#10;        events: {},&#10;&#10;        appEvents: {},&#10;&#10;        broadcastEvents: {},&#10;&#10;        initialize (options) {&#10;            this._super(options);&#10;        },&#10;&#10;        render () {&#10;            this.$el.html(this.template(/*your data*/));&#10;            this._super();&#10;        }&#10;    });&#10;});&#10;"
+      description="Create a es5 view js file"
+      toReformat="false"
+      toShortenFQNames="true">
+    <variable name="class" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
